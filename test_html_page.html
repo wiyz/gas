@@ -15,20 +15,20 @@
       // draws it.
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+          ['Time', 'Slow', 'Average', 'Fast'],
+          [new Date(1643567400000),  108, 110, 120],
+          [new Date(1643569200000),  102, 104, 110],
+          [new Date(1643571000000),  98, 102, 104],
+          [new Date(1643572800000),  80, 88, 92]
         ]);
 
         var options = {
-          title: 'Company Performance',
+          title: 'Recent Gas Prices (Gwei)',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
         chart.draw(data, options);
       }
